@@ -238,7 +238,7 @@ The zoo wants to display both the scientific name and the animal name in front o
 */
 const animalNames = [];
 
-zooAnimals.forEach(function(arr) {
+zooAnimals.forEach(arr => {
   animalNames.push(
     `Name: ${arr.animal_name}, Scientific: ${arr.scientific_name}`
   );
@@ -255,7 +255,7 @@ Create a new array named lowerCase and map over each name to convert them all to
 
 const lowerCase = [];
 
-zooAnimals.map(function(arr) {
+zooAnimals.map(arr => {
   lowerCase.push(`${arr.animal_name.toLowerCase()}`);
 });
 
@@ -267,14 +267,18 @@ The zoos are concenred about animals with a lower population count. Find out whi
 population less than 5.
 
 */
+
+// !!!NOTE!!!: I made the two seperate arrays because they wanted populations lower than 5 but
+// the array name they gave initally was largerPopulation.
+
 const largerPopulation = [];
 const smallerPopulation = [];
 
-const pop = zooAnimals.filter(function(arr) {
+const pop = zooAnimals.filter(arr => {
   return arr.population > 5;
 });
 
-const popSmall = zooAnimals.filter(function(arr) {
+const popSmall = zooAnimals.filter(arr => {
   return arr.population < 6;
 });
 
@@ -292,17 +296,17 @@ The zoos need to know their total animal population across the United States.  F
 const popCount = [];
 const populationTotal = [];
 
-zooAnimals.map(function(arr) {
+zooAnimals.map(arr => {
   popCount.push(arr.population);
 });
 
-const total = popCount.reduce(function(total, amount) {
+const total = popCount.reduce((total, amount) => {
   return total + amount;
 });
 
 populationTotal.push(total);
 
-console.log(populationTotal);
+console.log(populationTotal[0]);
 
 /* 
 
